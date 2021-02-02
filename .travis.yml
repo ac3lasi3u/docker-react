@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t ac3lasi3u/docker-react -f Dockerfile.dev . 
+
+script:
+  - docker run ac3lasi3u/docker-react npm run test -- --coverage
